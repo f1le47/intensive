@@ -1,9 +1,9 @@
-const counter = {};
+function logger() {
+  console.log(`I output only external context: ${this.item}`);
+}
 
-const copy1 = Object.assign({}, counter);
+const obj = { item: 'some value' };
 
-const copy2 = {...counter};
-
-const copy3 = structuredClone(counter);
-
-const copy4 = JSON.parse(JSON.stringify(counter));
+logger.call(obj);
+logger.apply(obj);
+logger.bind(obj)();
