@@ -1,5 +1,5 @@
 let promiseTwo = new Promise((resolve, reject) => {
-  resolve("a"); // Промис резолвит "a", который будет перехватывать then
+  resolve("a"); // Промис резолвит "a", который вызовет then
 });
 
 promiseTwo
@@ -13,7 +13,7 @@ promiseTwo
     return res + "!!!!!!!"; // finally выполняется в порядке очереди, то есть где стоит там и выполнится, но finally ничего не принимает, ничего не возвращает,
   })                        // поэтому строка "abc" из последнего выполнившевогося then'а "провалится" в следующий then.
   .catch((res) => {
-    return res + "d"; // catch не сработает, так как он реагирует на reject(), в нашем же случае then по сути отдал resolve()
+    return res + "d"; // catch не сработает, так как он реагирует на reject(), в нашем же случае then отдал resolve()
   })
   .then((res) => {
     console.log(res); // этот then получит в res строку "abc"

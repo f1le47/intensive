@@ -1,14 +1,5 @@
 const numArr = [10, 12, 15, 21];
 
-// 1 решение
-function logIndexAfterDelay(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    setInterval(() => {
-      console.log(arr[i]);
-    }, 3000)
-  }
-}
-
 // 2 решение
 let currIndex = 0;
 const interval = setInterval(() => {
@@ -33,5 +24,4 @@ async function logIndexAfterPrevious(arr) {
   }
 }
 
-logIndexAfterDelay(numArr);
 logIndexAfterPrevious(numArr);
